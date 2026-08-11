@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from intantvirtualpredictor.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2026 23:24:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instant Virtual Game Predictor</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="../cdn.jsdelivr.net/npm/tesseract.js%404/dist/tesseract.min.js"></script>
+</head>
+<body>
+
+  <!-- Fullscreen App Splash Loader (Sporty style) -->
+  <div id="app-splash">
+    <div class="splash-logo">V</div>
+    <div class="splash-title">VIRTUAL<span class="highlight">PREDICT</span></div>
+    <div class="splash-sub">instantvirtualprediction.com</div>
+    <div class="splash-loader-bar">
+      <div class="splash-loader-progress"></div>
+    </div>
+    <div class="splash-status">Connecting to server...</div>
+  </div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="logo">V</div>
+        <div class="brand-text">
+          <div class="brand-title">VIRTUAL<span class="highlight">PREDICT</span></div>
+          <div class="brand-sub">instantvirtualprediction.com</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <div class="status-pill"><span class="dot"></span><span id="header-counter">FREE ACCESS</span></div>
+      </div>
+    </header>
+
+    <!-- Content Area -->
+    <main class="content">
+
+      <!-- STEP 3: Scanner View -->
+      <div id="scanner-view">
+        <div class="status-bar-card">
+          <span>Session Status:</span>
+          <span class="status-green" id="session-status">UNLIMITED PREDICTIONS AVAILABLE</span>
+        </div>
+
+        <div class="scanner-container" onclick="triggerFileInput()">
+          <div class="scanner-frame">
+            <div class="scan-line" id="scan-line"></div>
+            <img id="preview-img" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'><rect width='100%' height='100%' fill='%23111622'/><text x='50%' y='50%' font-size='14' fill='%2300e676' dominant-baseline='middle' text-anchor='middle'>Tap to Upload Screenshot Image</text></svg>" alt="Game Screenshot">
+          </div>
+          <input type="file" id="file-input" accept="image/*" class="hidden" onchange="loadUserImage(event)">
+        </div>
+
+        <div class="card action-card">
+          <div class="loading-status">
+            <span class="status-dot"></span>
+            <div class="status-texts">
+              <div class="main-status" id="scan-status-main">Upload a screenshot and press scan...</div>
+            </div>
+          </div>
+          <button id="scan-trigger-btn" class="btn-primary" onclick="processScan()" disabled>GENERATE PREDICTION</button>
+        </div>
+
+        <!-- Multi-Game Output Section -->
+        <div id="prediction-results" class="card result-card hidden">
+          <div class="result-header">DETECTED SCREENSHOT MATCHES (1X2)</div>
+          <div id="games-container" class="games-list"></div>
+          
+          <div class="accumulator-summary">
+            <div class="acc-title">RECOMMENDED ACCUMULATOR SLIP</div>
+            <div id="acc-details"></div>
+          </div>
+
+          <p class="disclaimer">Predictions are for informational purposes only and are not guaranteed results. Please gamble responsibly.</p>
+        </div>
+      </div>
+
+
+
+    </main>
+
+    <!-- Bottom Ticker -->
+    <footer class="ticker-footer">
+      <div class="ticker-content">
+        <span class="ticker-item"><span class="dot"></span>054xxxx812 has won <strong class="green">GHC 50</strong></span>
+        <span class="ticker-item"><span class="dot"></span>020xxxx349 has won <strong class="green">GHC 100</strong></span>
+        <span class="ticker-item"><span class="dot"></span>055xxxx901 has won <strong class="green">GHC 250</strong></span>
+        <span class="ticker-item"><span class="dot"></span>024xxxx115 has won <strong class="green">GHC 75</strong></span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+<!-- Mirrored from intantvirtualpredictor.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2026 23:24:57 GMT -->
+</html>
